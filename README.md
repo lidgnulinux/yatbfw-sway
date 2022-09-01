@@ -29,3 +29,8 @@ Then edit "~/.config/yatbfw.json" to configure your taskbar.
 # Settings
 
 In the example folder you can find examples of how to configure it.
+
+# Needed additional tools :
+
+- swaymsg, to make window minimize on sway (via swaymsg) to work.
+- [wlrctl](https://git.sr.ht/~brocellous/wlrctl), to make window minimize on labwc and other wayland compositors with foreign-toplevel support to work.
