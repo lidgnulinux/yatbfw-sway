@@ -83,6 +83,11 @@ ToplevelButton::ToplevelButton(wayland::zwlr_foreign_toplevel_handle_v1_t toplev
   };
 }
 
+void minsway() 
+{
+	system("swaymsg move scratchpad");
+}
+
 void ToplevelButton::mouse_clicked(int button)
 {
   if(!m_activated) {
@@ -93,16 +98,16 @@ void ToplevelButton::mouse_clicked(int button)
       b->set_selected(false);
     set_selected(true);
   } else {
-    if(button == BTN_LEFT) {
+    if(button == BTN_RIGHT) {
       if(m_maximized)
         m_toplevel_handle.unset_maximized();
       else
         m_toplevel_handle.set_maximized();
-    } else if(button == BTN_RIGHT) {
+    } else if(button == BTN_LEFT) {
       if(m_minimized)
         m_toplevel_handle.unset_minimized();
       else
-        m_toplevel_handle.set_minimized();
+        minsway();
     } else if(button == BTN_MIDDLE) {
       m_toplevel_handle.close();
     }
