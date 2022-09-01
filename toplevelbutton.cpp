@@ -85,7 +85,7 @@ ToplevelButton::ToplevelButton(wayland::zwlr_foreign_toplevel_handle_v1_t toplev
 
 void minsway() 
 {
-	system("swaymsg move scratchpad");
+	system("swaymsg move scratchpad || wlrctl toplevel minimize state:active");
 }
 
 void ToplevelButton::mouse_clicked(int button)
